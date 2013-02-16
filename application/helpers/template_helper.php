@@ -48,3 +48,27 @@ if(!function_exists('getLeft'))
         return $ci->load->view('template/left');
     }   
 }
+
+/**
+ * Get the left section
+ */
+if(!function_exists('getContent'))
+{
+    function getContent($view="")
+    {
+        //load header file
+        $ci =& get_instance(); 
+        if(!empty($content))
+        {
+            //provide content variable
+            $data ['content'] = $content; 
+            $ci->load->view('template/content',$data);
+        }
+        else
+        {
+            //provide left banner
+            $data ['content']="";
+            $ci->load->view('template/content',$data);
+        }
+    }   
+}
