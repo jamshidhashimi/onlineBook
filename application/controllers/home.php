@@ -1,10 +1,32 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-//test
+/**
+ * @desc Main controller
+ * @author Jamshid Hashimi <jamshidhashimi@hotmail.com>
+ * @version 1.0
+ */
 class Home extends CI_Controller {
     
-    public function index()
+    function __construct()
     {
-        $this->load->view('welcome_message');
+        parent::__construct();
+        $this->load->library('form_validation');
+        $this->load->library('user_agent');
+        $this->load->helper('template');
+    }
+        
+    function index()
+    {
+        $this->home();
+    }
+        
+    function home()
+    {
+        putHeader();
+        putMenu();
+        putSlide();
+        putLeft();
+        putRight();
+        putFooter();
     }
 }
 

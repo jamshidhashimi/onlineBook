@@ -1,74 +1,95 @@
-<?php 
-if(!defined('BASEPATH')) exit('No direct script access allowed');
-
-/**
- * Get the header part of the page
- */
-if(!function_exists('getHeader'))
+<?php
+ //Page header
+if(!function_exists('putHeader'))
 {
-    function getHeader($lang="")
+    function putHeader()
+    { 
+        $ci = &get_instance();
+        return $ci->load->view('template/header_en');
+    }
+}
+  
+//load footer
+if(!function_exists('putFooter'))
+{
+    function putFooter()
     {
         $ci = &get_instance();
-        return $ci->load->view('template/header_'.$lang.'');
-    }   
+        $footers        = $ci->static_model->getData('footer','en');
+        $data['footer'] = $footers;
+        return $ci->load->view('template/footer',$data); 
+    }
 }
-
-/**
- * Get the footer part of the page
- */
-if(!function_exists('getFooter'))
+//load Menu
+if(!function_exists('putMenu'))
 {
-    function getFooter($lang="")
+    function putMenu()
     {
         $ci = &get_instance();
-        return $ci->load->view('template/footer');
-    }   
+        $ci->load->model('static/static_model');
+        $menus      = $ci->static_model->getData('menu','en');
+        $categories = $ci->static_model->getData('category','en');
+        $data['menu']       = $menus;
+        $data['category']   = $categories;
+        return $ci->load->view('template/menu',$data); 
+    }
 }
-
-/**
- * Get the right section of the page
- */
-if(!function_exists('getRight'))
+//load footer
+if(!function_exists('putSlide'))
 {
-    function getRight($lang="")
+    function putSlide()
     {
         $ci = &get_instance();
-        return $ci->load->view('template/right');
-    }   
+        return $ci->load->view('template/slides');  
+    }
 }
-
-/**
- * Get the left section
- */
-if(!function_exists('getLeft'))
+ 
+//left tpl
+if(!function_exists('putLeft'))
 {
-    function getLeft($lang="")
+    function putLeft()
     {
         $ci = &get_instance();
-        return $ci->load->view('template/left');
-    }   
+        $ci->load->model('static/static_model');
+        $categories = $ci->static_model->getData('category','en');
+        $publishers = $ci->static_model->getData('publisher','en');
+        $data['category']   = $categories;
+        $data['publisher']  = $publishers;
+        return $ci->load->view('template/left',$data);
+    }
 }
 
-/**
- * Get the left section
- */
-if(!function_exists('getContent'))
+//left tpl
+if(!function_exists('putRight'))
 {
-    function getContent($view="")
+    function putRight()
     {
+        $ci = &get_instance();
+        $ci->load->model('books/books_model');
+        $records = $ci->books_model->getBooks();
+        $data['books'] = $records;
+        return $ci->load->view('template/right',$data);
+    }
+}
+
+//Bring content to view
+if(!function_exists('putContent'))
+{
+    function putContent($content='')
+    {  
         //load header file
-        $ci =& get_instance(); 
+        $ci = &get_instance(); 
         if(!empty($content))
         {
-            //provide content variable
-            $data ['content'] = $content; 
+            //provide left banner
+            $data['content'] = $content; 
             $ci->load->view('template/content',$data);
         }
         else
         {
             //provide left banner
-            $data ['content']="";
+            $data['content'] = "";
             $ci->load->view('template/content',$data);
         }
-    }   
+    }
 }
