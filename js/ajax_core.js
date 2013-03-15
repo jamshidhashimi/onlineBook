@@ -26,7 +26,7 @@ function makerequest_sp(serverPage, params, objID)
 	/*display loading inside a custom created DIV*/
 	create_foo_costum(100,250,'myFoo');
 	/*load loading image*/
-	document.getElementById('myFoo').innerHTML ='<div align="center"><image src="/kardan/images/loading.gif" border="0"></div>';
+	document.getElementById('myFoo').innerHTML ='<div align="center"><image src="/book/images/loading.gif" border="0"></div>';
 	/*add a random number at the end of parammeters*/
 	var myRandom=parseInt(Math.random()*99999999);
 	params+='&'+myRandom;

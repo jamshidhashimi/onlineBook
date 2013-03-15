@@ -12,14 +12,15 @@ class Home extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('user_agent');
         $this->load->helper('template');
+        $this->load->helper('admin');
     }
         
     function index()
     {
-        $this->home();
+        $this->main();
     }
         
-    function home()
+    function main()
     {
         putHeader();
         putMenu();
