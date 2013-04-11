@@ -1,7 +1,8 @@
 <?php
 class Books_model extends CI_Model
 {
-    function __construct() {
+    function __construct() 
+    {
         parent::__construct();
     }
     
@@ -12,8 +13,7 @@ class Books_model extends CI_Model
         }else{
             $lang = 'en';
         }
-        
-        if(array_search('nrecords', $params) && array_search('offset', $params)){
+        if(isset($params['nrecords']) && isset($params['offset'])){
             $this->db->limit($params['nrecords'],$params['offset']);
         }
         $records = $this->db
@@ -27,11 +27,11 @@ class Books_model extends CI_Model
                     page_number,
                     size,
                     year,
-                    language.name AS language,
+                    language.name_'.$lang.' AS language,
                     category.name_'.$lang.' AS category,
                     price,
                     content,
-                    bookstore.name AS bookstore,
+                    bookstore.name_'.$lang.' AS bookstore,
                     image,
                     insert_date,
                     stock 

@@ -13,7 +13,6 @@
     <script src="<?=base_url()?>js/admin/hideshow.js" type="text/javascript"></script>
     <script src="<?=base_url()?>js/admin/jquery.tablesorter.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="<?=base_url()?>js/admin/jquery.equalHeight.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>js/ajax_core.js"></script>
     <script type="text/javascript" src="<?=base_url()?>js/core.js"></script>
     <script type="text/javascript">
     $(document).ready(function() 

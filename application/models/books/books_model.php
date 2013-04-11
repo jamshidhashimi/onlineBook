@@ -23,11 +23,11 @@ class Books_model extends CI_Model
                     page_number,
                     size,
                     year,
-                    language.name AS language,
+                    language.name_'.$lang.' AS language,
                     category.name_'.$lang.' AS category,
                     price,
                     content,
-                    bookstore.name AS bookstore,
+                    bookstore.name_'.$lang.' AS bookstore,
                     image,
                     insert_date,
                     stock 

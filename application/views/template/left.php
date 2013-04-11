@@ -17,6 +17,5 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <div class="content_left_section"></div>
     </div>
   <!-- end of content left -->

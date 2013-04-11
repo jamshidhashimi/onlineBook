@@ -1,6 +1,9 @@
 <div id="bookdiv">
 <article class="module width_full">
     <header><h3 class="tabs_involved">Books list</h3>
+        <ul class="tabs">
+            <li onclick="parent.location='<?=base_url()?>admin/books/add_book'"><a href="#">Add new Book</a></li>
+         </ul>
     </header>
 
     <div class="tab_container">
