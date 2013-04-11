@@ -36,12 +36,12 @@ padding:4px 6px;
 
 #pagination-flickr a:link,
 #pagination-flickr a:visited {
-color:#0063e3;
-display:block;
-float:left;
-padding:3px 6px;
-text-decoration:none;
+    color:#0063e3;
+    display:block;
+    float:left;
+    padding:3px 6px;
+    text-decoration:none;
 }
 #pagination-flickr a:hover{
-border:solid 1px #666666;
+    border:solid 1px #666666;
 }
