@@ -28,7 +28,7 @@
             </tr> 
         </thead> 
         <tbody>
-            <?php $i=0; foreach($books AS $item): $i++; ?>
+            <?php $i=$page; foreach($books AS $item): $i++; ?>
             <tr> 
                 <td><?=$i?></td> 
                 <td><?=$item->isbn?></td> 
