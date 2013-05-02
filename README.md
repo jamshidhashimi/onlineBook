@@ -1,7 +1,7 @@
 onlineBook
 ==========
 
-I am really happy to publish the very first open source project of Afghanistan on Github. This project is completely voluntarily developed and will be implemented in Afghanistan for both academic and commercial use.
+Online Book is a project made for both academic and business use for students, newbies and professionals.
 
 
 Features v1.0
