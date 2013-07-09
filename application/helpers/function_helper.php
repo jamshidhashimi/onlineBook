@@ -18,9 +18,9 @@ if(!function_exists('stable'))
         }
         foreach($records AS $item){
             if($item->id==$value){
-                $str .= '<option id="'.$item->id.'" name="'.$item->id.'" selected="selected">'.$item->name.'</option>';
+                $str .= '<option value="'.$item->id.'" selected="selected">'.$item->name.'</option>';
             }else{
-                $str .= '<option id="'.$item->id.'" name="'.$item->id.'">'.$item->name.'</option>';
+                $str .= '<option value="'.$item->id.'">'.$item->name.'</option>';
             }
         }
         return $str;
